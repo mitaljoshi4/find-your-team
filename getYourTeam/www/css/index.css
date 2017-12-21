@@ -1,0 +1,52 @@
+.padding {
+    padding: 10px;
+}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    background: none;
+}
+
+body {
+    background-image: url("../images/backgroung_transparent.png") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+div {
+    text-align: center;
+}
+
+#getMyTeam {
+    height: 180px;
+}
+
+label {
+    color: black;
+}
+
+#set {
+    width: 80%;
+    color: white;
+    text-shadow: none;
+}
+
+input {
+    background-color: white !important;
+}
+
+.header {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    text-shadow: none;
+    font-weight: bold;
+    color: rgb(51, 122, 183) !important;
+}
+
+th {
+    text-align: center !important;
+}
+
+button, button:visited, button:hover, button:active {
+    background-color: rgb(51, 122, 183) !important;
+    outline: none !important;
+}

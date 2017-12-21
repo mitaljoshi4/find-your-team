@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>getMyTeam</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/jquery.2.2.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.material.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</head>
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header" class="padding header">Get My Team</div>
+        <div data-role="main" class="padding">
+            <input type="number" id="totalPlayers" placeholder="Enter Number of Players" />
+            <br />
+            <input type="number" id="teamNumber" placeholder="Enter Number of Team" />
+            <br />
+            <button data-role="none" id="set" class="btn btn-primary">Set</button>
+            <div id="myTeam" class="padding">
+                You Are in Team :
+                <img id="teamLogo"/>
+            </div>
+            <div class="padding">
+                <img id="getMyTeam" src="images/coin.png" />
+            </div>
+            <div id="result">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="Acount" class="text-primary">0</td>
+                            <td id="Bcount" class="text-primary">0</td>
+                            <td id="Ccount" class="text-primary">0</td>
+                            <td id="Dcount" class="text-primary">0</td>
+                            <td id="Ecount" class="text-primary">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
