@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
+        "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-whitelist": "1"
     },
     "cordova": {
         "plugins": {
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-dialogs": {}
         }
     }
 }
