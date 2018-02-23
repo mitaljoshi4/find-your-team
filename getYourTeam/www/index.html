@@ -10,57 +10,191 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>getMyTeam</title>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/jquery.2.2.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.material.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/tap-page.js"></script>
+    <script type="text/javascript" src="scripts/name-page.js"></script>
 </head>
-<body>
+<body class="body-bg">
+    <!--home page start-->
+
     <div data-role="page" id="home">
-        <div data-role="header" class="padding header">Get My Team</div>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" class="padding header">
+            Get My Team
+        </div>
+        <div data-role="main" class="padding">
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <a href="#name-page" data-role="none" class="btn btn-primary gyt-btn">By Name</a>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <a href="#tap-page" data-role="none" class="btn btn-primary gyt-btn">By Tap</a>
+                </div>
+            </div>
+          </div>
+    </div>
+    <!--home page end-->
+    <!--team by member name page start-->
+
+    <div data-role="page" id="name-page">
+        <div data-role="header" class="padding header">
+            <img src="images/left-arrow.png" data-rel="back" class="gyt-img" />Get My Team
+        </div>
+        <div data-role="main" class="padding container">
+            <!--<label>Enter Name of member : </label>
+            <input type="text" id="name-text" />-->
+            <div class="row">
+                <div class="col col-sm-8">
+                    <select class="selectpicker" id="name-text" multiple>
+                        <option selected>Akshay</option>
+                        <option selected>Amit</option>
+                        <option selected>Ankit</option>
+                        <option selected>Arpit</option>
+                        <option selected>Bhadresh</option>
+                        <option selected>Bhavik</option>
+                        <option selected>Bhoomika</option>
+                        <option selected>Devanshi</option>
+                        <option selected>Dhruval</option>
+                        <option selected>Ghanshyam</option>
+                        <option selected>Hani</option>
+                        <option selected>Himang</option>
+                        <option selected>Hiral</option>
+                        <option selected>Janak</option>
+                        <option selected>Jaymita</option>
+                        <option selected>Manish</option>
+                        <option selected>Mayur</option>
+                        <option selected>Mital</option>
+                        <option selected>Mitesh</option>
+                        <option selected>Nirali Bhatt</option>
+                        <option selected>Nirali Modi</option>
+                        <option selected>Nisarg</option>
+                        <option selected>Pankil</option>
+                        <option selected>Pankti</option>
+                        <option selected>Parshwa</option>
+                        <option selected>Parth</option>
+                        <option selected>Poonam</option>
+                        <option selected>Pranavi</option>
+                        <option selected>Prasanth</option>
+                        <option selected>Pritesh</option>
+                        <option selected>Rahul</option>
+                        <option selected>Ravi Lodhi</option>
+                        <option selected>Ravi Patel</option>
+                        <option selected>Raviraj</option>
+                        <option selected>Sagar</option>
+                        <option selected>Sanjay</option>
+                        <option selected>Sanket</option>
+                        <option selected>Shailesh</option>
+                        <option selected>Suraj</option>
+                        <option selected>Tanuja</option>
+                        <option selected>Tejas</option>
+                        <option selected>Vikas Agarwal</option>
+                        <option selected>Vikas Lalkiya</option>
+                        <option selected>Vikram</option>
+                        <option selected>Ajit Kaka</option>
+                        <option selected>Bharat Kaka</option>
+                    </select>
+                </div>
+                <div class="col col-sm-4">
+                    <img id="add-new-player" src="images/add.svg" />
+                </div>
+            </div>
+          
+            <input type="text" id="team-text" />
+            <a id="name-add" class="gyt-btn btn btn-primary">Generate</a>
+            <!--<div id="name-table">
+                <table></table>
+            </div>-->
+          </div>
+       </div>
+    <!--team by member name page end-->
+    <!--team by member tap page start-->
+    <div data-role="page" id="tap-page">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" class="padding header">
+            <img src="images/left-arrow.png" data-rel="back" class="gyt-img" />Get My Team
+        </div>
         <div data-role="main" class="padding">
             <input type="number" id="totalPlayers" placeholder="Enter Number of Players" />
             <br />
             <input type="number" id="teamNumber" placeholder="Enter Number of Team" />
             <br />
-            <button data-role="none" id="set" class="btn btn-primary">Set</button>
+            <a data-role="none" id="set" class="btn btn-primary gyt-btn">Set</a>
             <div id="myTeam" class="padding">
                 You Are in Team :
-                <img id="teamLogo"/>
+                <img id="teamLogo" />
             </div>
             <div class="padding">
                 <img id="getMyTeam" src="images/coin.png" />
             </div>
-            <div id="result">
+            <p id="tap-counter">0</p>
+            <!--<div id="result">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>A</th>
-                            <th>B</th>
-                            <th>C</th>
-                            <th>D</th>
-                            <th>E</th>
+                            <th id="Aheader">A</th>
+                            <th id="Bheader">B</th>
+                            <th id="Cheader">C</th>
+                            <th id="Dheader">D</th>
+                            <th id="Eheader">E</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td id="Acount" class="text-primary">0</td>
-                            <td id="Bcount" class="text-primary">0</td>
-                            <td id="Ccount" class="text-primary">0</td>
-                            <td id="Dcount" class="text-primary">0</td>
-                            <td id="Ecount" class="text-primary">0</td>
+                            <td id="Acount" class="text-primary"></td>
+                            <td id="Bcount" class="text-primary"></td>
+                            <td id="Ccount" class="text-primary"></td>
+                            <td id="Dcount" class="text-primary"></td>
+                            <td id="Ecount" class="text-primary"></td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>-->
         </div>
     </div>
+<!--team by member tap page end-->
+<div data-role="page" id="result-page">
+
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="padding header">
+        <div data-rel="back">
+            <img src="images/left-arrow.png" class="gyt-img"/>
+        </div>Results
+    </div>
+    <div data-role="main" class="padding">
+      <div id="result">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th id="Aheader">A</th>
+                    <th id="Bheader">B</th>
+                    <th id="Cheader">C</th>
+                    <th id="Dheader">D</th>
+                    <th id="Eheader">E</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="Acount" class="text-primary"></td>
+                    <td id="Bcount" class="text-primary"></td>
+                    <td id="Ccount" class="text-primary"></td>
+                    <td id="Dcount" class="text-primary"></td>
+                    <td id="Ecount" class="text-primary"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

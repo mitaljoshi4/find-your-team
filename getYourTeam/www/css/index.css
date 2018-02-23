@@ -50,3 +50,43 @@ button, button:visited, button:hover, button:active {
     background-color: rgb(51, 122, 183) !important;
     outline: none !important;
 }
+
+.gyt-btn {
+    color: white !important;
+    background-color: #337ab7;
+    width: 80%;
+}
+
+* {
+    text-shadow: none;
+}
+
+.gyt-img {
+    float: left;
+    height: 30px;
+}
+
+#home [data-role="main"] {
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+tr.border, td, th {
+    border: 1px solid #337ab7 !important;
+    padding: 3px;
+}
+
+#result-page {
+    overflow-x: visible;
+}
+
+#add-new-player {
+    height: 30px;
+}
+.body-bg {
+    background-image: url("../images/backgroung_transparent.png") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}

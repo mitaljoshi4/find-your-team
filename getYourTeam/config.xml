@@ -93,5 +93,6 @@
     <platform name="wp8">
         <splash height="1280" src="res/screens/wp8/SplashScreenImage.png" width="768" />
     </platform>
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
 </widget>
